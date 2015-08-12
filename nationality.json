@@ -1,0 +1,78 @@
+[
+	{
+		"pais": "Argentina",
+		"nacionalidade": "Argentino"
+	},
+	{
+		"pais": "Brasil",
+		"nacionalidade": "Brasileiro"
+	},
+	{
+		"pais": "Chile",
+		"nacionalidade": "Chileno"
+	},
+	{
+		"pais": "Colômbia",
+		"nacionalidade": "Colombiano"
+	},
+	{
+		"pais": "Costa Rica",
+		"nacionalidade": "Costarriquenho"
+	},
+	{
+		"pais": "Cuba",
+		"nacionalidade": "Cubano"
+	},
+	{
+		"pais": "Equador",
+		"nacionalidade": "Equatoriano"
+	},
+	{
+		"pais": "México",
+		"nacionalidade": "Mexicano"
+	},
+	{
+		"pais": "Panamá",
+		"nacionalidade": "Panamenho"
+	},
+	{
+		"pais": "Paraguai",
+		"nacionalidade": "Paraguaio"
+	},
+	{
+		"pais": "Peru",
+		"nacionalidade": "Peruano"
+	},
+	{
+		"pais": "Uruguai",
+		"nacionalidade": "Uruguaio"
+	},
+	{
+		"pais": "Venezuela",
+		"nacionalidade": "Venezuelano"
+	},
+	{
+		"pais": "Alemanha",
+		"nacionalidade": "Alemão"
+	},
+	{
+		"pais": "Espanha",
+		"nacionalidade": "Espanhol"
+	},
+	{
+		"pais": "França",
+		"nacionalidade": "Francês"
+	},
+	{
+		"pais": "Itália",
+		"nacionalidade": "Italiano"
+	},
+	{
+		"pais": "Inglaterra",
+		"nacionalidade": "Inglês"
+	},
+	{
+		"pais": "Estados Unidos",
+		"nacionalidade": "Americano"
+	}
+]

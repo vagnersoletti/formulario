@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <meta name="author" content="Vagner Luis Soletti">
+        <meta name="description" content="Desenvolvimento de Prova para o Cargo de Front-end.">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Desbravador | Cadastro de Pessoas</title>
+
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-datepicker.min.css">
+		
+	</head>
+	<body>
+		<nav class="navbar navbar-default navbar-fixed-top">
+	      	<div class="container">
+	        	<div class="navbar-header">
+	          		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+			            <span class="sr-only">Toggle navigation</span>
+			            <span class="icon-bar"></span>
+			            <span class="icon-bar"></span>
+			            <span class="icon-bar"></span>
+	          		</button>
+	          		<a class="navbar-brand" href="./">Desbravador</a>
+	        	</div>
+		        <div id="navbar" class="navbar-collapse collapse">
+		          	<ul class="nav navbar-nav">
+			            <li><a href="./"><i class="glyphicon glyphicon-align-justify"></i> Listar Pessoas</a></li>
+			            <li><a href="./index.html"><i class="glyphicon glyphicon-user"></i> Cadastro de Pessoa</a></li>
+		          	</ul>
+		          	<ul class="nav navbar-nav navbar-right f32">
+			            <li><a href="javascript:void(0);" class="flags br" onclick="ChangeLang('pt');" title="Português"></a></li>
+			            <li><a href="javascript:void(0);" class="flags en" onclick="ChangeLang('en');" title="Inglês"></a></li>
+			            <li><a href="javascript:void(0);" class="flags es" onclick="ChangeLang('es');" title="Espanhol"></a></li>
+			         </ul>
+		        </div><!--/.nav-collapse -->
+	      	</div><!--/.container -->
+	    </nav><!--/.navbar -->
+
+	    <div class="container">
+	    	<div id="google_translate_element"></div> 
+	    	<form class="form-horizontal" method="post">
+	    		<h1>Cadastro de Pessoa</h1>
+	    		<div class="pull-right"> <p><em>(*)</em> Campo obrigatório</p></div>
+		        <div class="form-group">
+		            <div class="col-xs-12">
+		            <label for="e-mail">E-mail: <em>(*)</em></label>
+		                <input type="text" class="form-control" id="email" nome="email" placeholder="E-mail">
+		                <div class="error" id="error_email">E-mail é obrigatório.</div>
+		                <div class="error" id="error_email_valid">Por favor, digite um e-mail válido.</div>
+		            </div>
+		        </div>
+		        <div class="form-group">
+		        <div class="col-xs-12 col-sm-12 col-md-12">
+		            	<label for="name">Nome: <em>(*)</em></label>
+		            </div>
+		            <div class="col-xs-12 col-sm-6 col-md-6">
+		                <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Primeiro Nome">
+		                <em>(Primeiro nome)</em>
+		                <div class="error" id="error_first_name">Primeiro nome é obrigatório.</div>
+		            </div>
+		            <div class="col-xs-12 col-sm-6 col-md-6">
+		                <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Último Nome">
+		                <em>(Último nome)</em>
+		                <div class="error" id="error_last_name">Último nome é obrigatório.</div>
+		            </div>
+		        </div>
+		        <div class="form-group">
+		            <div class="col-xs-12 col-sm-6 col-md-6">
+		            	<label for="date">Data nascimento:  <em>(*)</em><div class="age">0</div> ano(s)</label>
+		                <input type="text" class="form-control" id="date" name="date" placeholder="Data Nascimento">
+		                <div class="error" id="error_date">Data nascimento é obrigatório.</div>
+		            </div>
+		            <div class="col-xs-12 col-sm-6 col-md-6">
+		            	<label for="radio">Sexo: <em>(*)</em></label>
+		                <div class="radio">
+		                	<input type="radio" id="male" name="sex" value="male">
+							<label for="male">Masculino</label>
+						   	<input type="radio" id="female" name="sex" value="female">
+							<label for="female">Feminino</label>
+						</div>
+						<div class="error" id="error_sex">Sexo é obrigatório.</div>
+		            </div>
+		        </div>
+		        <div class="form-group">
+		            <div class="col-xs-12 col-sm-6 col-md-6">
+		            	<label for="nationality">Nacionalidade:</label>
+		                <select class="form-control" name="nationality" id="nationality">
+		                	<option value="">Selecione nacionalidade</option>
+		                </select>
+		            </div>
+			        <div class="col-xs-12 col-sm-6 col-md-6">
+		            	<label for="civil_status">Estado civil:</label>
+		            	<select class="form-control" name="civil_status" id="civil_status">
+		                	<option value="">Selecione seu estado civil</option>
+		                	<option value="Casado">Casado(a)</option>
+		                	<option value="Separado">Separado(a)</option>
+		                	<option value="Divorciado">Divorciado(a)</option>
+		                	<option value="Viuvo">Viúvo(a)</option>
+		                </select>
+			        </div>
+		        </div>
+		        <div class="form-group">
+		            <div class="col-xs-12 col-sm-6 col-md-6">
+		            	<label for="type">Tipo documento <em>(*)</em></label>
+		                <div class="radio">
+		                	<input type="radio" id="cpf" name="type" value="cpf" class="type">
+							<label for="cpf">CPF</label>
+						   	<input type="radio" id="cnpj" name="type" value="cnpj" class="type">
+							<label for="cnpj">CNPJ</label>
+					    </div>
+					    <div class="error" id="error_type">Tipo documento é obrigatório.</div>
+		            </div>
+		            <div class="col-xs-12 col-sm-6 col-md-6">
+		            	<label for="document">Nr. Documento:  <em>(*)</em></label>
+		                <input type="text" class="form-control" id="document" name="document" placeholder="Nr. Documento">
+		                <div class="error" id="error_document">Nr. Documento é obrigatório.</div>
+		            </div>
+		        </div>
+		        <div class="form-group">
+		            <div class="col-xs-12 col-sm-6 col-md-6">
+		            	<label for="organ">Orgão expeditor:</label>
+		                <select class="form-control" name="organ" id="organ">
+		                	<option value="">Selecione orgão expeditor</option>
+		                	<option value="SSP">SSP</option>
+		                	<option value="CNT">CNT</option>
+		                	<option value="DIC">DIC</option>
+		                	<option value="CTPS">CTPS</option>
+		                	<option value="FGTS">FGTS</option>
+		                </select>
+		            </div>
+			        <div class="col-xs-12 col-sm-6 col-md-6">
+		            	<label for="identity">Nr. Identidade:</label>
+		                <input type="text" class="form-control" id="identity" name="identity" placeholder="Nr. Identidade">
+		            </div>
+		        </div>
+		        <h3>Endereço</h3>
+		        <div class="form-group">
+		            <div class="col-xs-12 col-sm-6 col-md-6">
+		            	<label for="zip_code">Cep:  <em>(*)</em></label>
+		            	<input type="text" class="form-control" id="zip_code" name="zip_code" placeholder="Cep">
+		            	<div class="error" id="error_zip_code">Cep é obrigatório.</div>
+		            </div>
+			        <div class="col-xs-12 col-sm-6 col-md-6">
+		            	<label for="nation">País:  <em>(*)</em></label>
+		                <select class="form-control" name="nation" id="nation">
+		                	<option value="">Selecione país</option>
+		                </select>
+		                <div class="error" id="error_nation">País é obrigatório.</div>
+		            </div>
+		        </div>
+		        <div class="form-group">
+		            <div class="col-xs-12 col-sm-6 col-md-6">
+		            <label for="logradouro">Endereço:  <em>(*)</em></label>
+		                <input type="text" class="form-control" id="logradouro" nome="logradouro" placeholder="Endereço" data-cep="logradouro">
+		                <div class="error" id="error_logradouro">Endereço é obrigatório.</div>
+		            </div>
+		        </div>
+		        <div class="form-group">
+		            <div class="col-xs-12 col-sm-6 col-md-6">
+		            	<label for="estate">Estado:  <em>(*)</em></label>
+		            	<select class="form-control" name="estate" id="estate">
+		                	<option value="">Selecione estado</option>
+		                </select>
+		                <div class="error" id="error_estate">Estado é obrigatório.</div>
+		                <input type="hidden" id="data-cep-estado" data-cep="uf">		                
+		            </div>
+			        <div class="col-xs-12 col-sm-6 col-md-6">
+		            	<label for="city">Cidade:  <em>(*)</em></label>
+		                <select class="form-control" name="city" id="city">
+		                	<option value="">Selecione cidade</option>
+		                </select>
+		                <div class="error" id="error_city">Cidade é obrigatório.</div>
+		                <input type="hidden" id="data-cep-cidade" data-cep="cidade">
+		            </div>
+		        </div>
+		        <h3>Observações</h3>
+		        <div class="col-xs-12 col-sm-12 col-md-12">
+		        	<textarea class="form-control" id="comments" nome="comments" placeholder="Observações" rows="6"></textarea>
+		        </div>
+		        <div class="form-group">
+		            <div class="col-xs-offset-2 col-xs-10">
+		                <a href="javascript:void(0);" class="btn btn-primary pull-right" id="submit">Enviar</a>
+		            </div>
+		        </div>
+		    </form><!--/.form-horizontal -->
+		</div><!--/.container -->
+
+		<!-- JS -->
+		<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/tradutor.js"></script>
+		<script type="text/javascript" src="js/jquery.inputmask.bundle.js"></script>
+		<script type="text/javascript" src="js/jquery.cep.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script>
+		<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<!-- Translate datepicker -->
+		<script src="js/locales/bootstrap-datepicker.pt-BR.min.js" charset="UTF-8"></script>
+		<!-- Translate page -->
+		<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>	
+		<!-- Load city and estate -->
+		<script type="text/javascript" src="http://cidades-estados-js.googlecode.com/files/cidades-estados-v0.2.js"></script> 
+	</body>
+</html>
